@@ -1,7 +1,7 @@
 pipeline {
        agent any
 	   stages {
-	          stage("build") {
+	          stage("Structer") {
 			        steps {
 					       git branch: 'main', url: 'https://github.com/Akshay-Sharma4771/java.git'
 						   }
@@ -11,9 +11,10 @@ pipeline {
 					       sh 'sudo mvn clean package'
 						   }
 						}
-			  stage("execute") {
+			  stage("image-built") {
 			        steps {
-					       sh 'sudo java -jar target/*.jar >/var/lib/jenkins/workspace/maven/text.txt'
+					       sh 'sudo docker build -t tom-repo:$build_tag .'
+					       sh 'sudo docker tag tom-repo:$build_tag akshay741/dockerpipeline
 						   }
 						}
 		}	
