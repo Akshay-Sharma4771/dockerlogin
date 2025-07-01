@@ -3,7 +3,7 @@ pipeline {
 	   stages {
 	          stage("build") {
 			        steps {
-					       git branch: 'main', url: 'https://github.com/Akshay-Sharma4771/java.git'
+					       git branch: 'main', url: 'https://github.com/Akshay-Sharma4771/dockerlogin.git'
 						   }
 						}
 			  stage("testing") {
