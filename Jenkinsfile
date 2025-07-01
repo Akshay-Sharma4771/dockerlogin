@@ -1,9 +1,6 @@
 pipeline {
        agent any
-       		environment {
-        		      LATEST_TAG = 'latest' 
-    			    }
-
+       		
 	   stages {
 	          stage("Structer") {
 			     steps {
@@ -19,6 +16,7 @@ pipeline {
 			        steps {
 					sh 'sudo docker build -t tomcat-repo1:$LATEST_TAG .'
 					sh 'sudo docker tag tomcat-repo1:$LATEST_TAG akshay741/dockpipe'
+					sh 'ls -l'
 				      }
 				}
 		}	
