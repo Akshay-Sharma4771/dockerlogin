@@ -1,19 +1,20 @@
 pipeline {
        agent any
 	   stages {
-	          stage("build") {
+	          stage("structure") {
 			        steps {
 					git branch: 'main', url: 'https://github.com/Akshay-Sharma4771/java.git'
 					}
 					}
-			  stage("testing") {
+			  stage("test") {
 			        steps {
 					sh 'sudo mvn clean package'
 					}
 					}
-			  stage("execute") {
+			  stage("img-build") {
 			        steps {
-					sh 'sudo java -jar target/*.jar >/var/lib/jenkins/workspace/maven/text.txt'
+					sh 'sudo docker build -t tomcat-repo:$LAT_TAG .'
+					sh 'sudo docker tag tomcat-repo:$LAT_TAG akshay741/dockin'
 					}
 					}
 		}	
