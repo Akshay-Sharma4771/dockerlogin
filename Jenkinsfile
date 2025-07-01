@@ -15,7 +15,7 @@ pipeline {
 			  stage("image-built") {
 			        steps {
 					sh 'sudo docker build -t tom-repo:$build_tag .'
-					sh 'sudo docker tag tom-repo:$build_tag akshay741/dockerpipe
+					sh 'sudo docker tag tom-repo:$build_tag akshay741/dockerpipe'
 				      }
 				}
 		}	
