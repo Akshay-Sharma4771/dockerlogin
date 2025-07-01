@@ -13,8 +13,8 @@ pipeline {
 					}
 			  stage("img-build") {
 			        steps {
-					sh 'sudo docker build -t tomcat-repo:$LAT_TAG .'
-					sh 'sudo docker tag tomcat-repo:$LAT_TAG akshay741/dockin'
+					sh 'sudo docker build  -t as-repo:$LST_TAG .'
+					sh 'sudo docker tag as-repo:$LST_TAG akshay741/dockin'
 					}
 					}
 		}	
