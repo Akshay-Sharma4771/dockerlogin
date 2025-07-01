@@ -14,8 +14,8 @@ pipeline {
                                 }
                           stage("image-built") {
                                 steps {
-                                        sh 'sudo docker build -t tomcat-repo1:$LATEST_TAG .'
-                                        sh 'sudo docker tag tomcat-repo1:$LATEST_TAG akshay741/dockpipe'
+                                        sh 'sudo docker build -t tomcat-re:$LAT_TAG .'
+                                        sh 'sudo docker tag tomcat-re:$LAT_TAG akshay741/dockpipe'
                                       }
                                 }
                 }
