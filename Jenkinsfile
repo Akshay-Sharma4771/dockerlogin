@@ -1,5 +1,8 @@
 pipeline {
        agent any
+       		environment {
+        		      LATEST_TAG = 'latest' 
+    			    }
 
 	   stages {
 	          stage("Structer") {
