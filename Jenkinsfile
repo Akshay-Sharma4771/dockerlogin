@@ -14,7 +14,7 @@ pipeline {
 			  stage("img-build") {
 			        steps {
 					sh 'sudo docker build  -t as-repo:$LST_TAG .'
-					sh 'sudo docker tag as-repo:$LST_TAG akshay741/dockin'
+					sh 'sudo docker tag as-repo:$LST_TAG akshay741/dockin:$LST_TAG'
 					}
 					}
 		}	
